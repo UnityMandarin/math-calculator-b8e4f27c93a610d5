@@ -1,36 +1,31 @@
 # Stick Showdown
 
-An original stickman brawler for the browser. Fight endless waves of stickmen in a moonlit arena, chain combos and survive boss waves. Plain HTML, CSS and JavaScript, with no dependencies and no build step.
+An original stickman brawler for the browser. Fight endless waves, learn the controls in Training, and use saved coins to unlock weapons and abilities. The game uses plain HTML, CSS, and JavaScript with no dependencies or build step.
 
-## Features
+## Game modes and progression
 
-- Dash with brief invulnerability, dive kicks, and an ultimate shockwave that charges as you fight
-- Training mode with a move checklist, a punching dummy and a button to add more fighters
-- Coins drop from defeated enemies and are saved between sessions
-- Shop with 7 weapons that get pricier as they get stronger, each with its own ability (bleed, burn, freeze, crit, quake, chain lightning and more)
-- Punch, kick, block and jump, with hit-stop, screen shake and particle effects
-- Four enemy types (grunt, ninja, brute, boss) with their own speed, health and blocking behaviour
-- Endless waves that scale in difficulty, with a boss every 5th wave
-- Combo scoring and a saved best score (`localStorage`)
-- Procedural sound effects (WebAudio), no asset files
-- Keyboard and touch controls, responsive 16:9 canvas
+- **Play:** survive endless waves. Bosses arrive every fifth wave; a marked, wind-up ground slam gives you time to move or block, followed by a recovery window.
+- **Training:** practice against a dummy, review the move checklist, and add practice fighters. Training does not grant wave rewards, coins, or best-score progress.
+- **Wave rewards:** after each cleared survival wave, choose one run-only reward: restore 35% health, add up to 20% damage, or reduce dash cooldown by up to 10%. Bonuses stack for the run, cap at +80% damage and 45% shorter dash cooldown, and reset when it ends. The reward cards show current and next values and disable capped bonuses.
+- **Shop, Map, Abilities:** use earned coins to unlock and equip ten distinct weapons and five abilities; select among four arenas. Purchases, equipped loadout, selected map, best score, sound, and reduced-motion preference use the existing `localStorage` keys plus a preference key.
+- **Run summary:** the end screen reports wave, defeats, points, best score, arena, weapon, coins earned, and temporary run bonuses.
 
 ## Controls
 
 | Action | Keyboard | Touch |
 | --- | --- | --- |
-| Move | A / D or arrows | on-screen arrows |
-| Jump | W, Space or Up | Jump |
-| Punch | J | Punch |
-| Kick | K | Kick |
-| Block | L, S or Down | Block |
-| Dash | Shift or I | Dash |
-| Ultimate | U (when the bar is full) | Ult |
-| Dive kick | S + K while in the air | n/a |
-| Leap forward | hold W + D | Jump + arrow |
-| Pause / mute | P or Esc / M | n/a |
+| Move | A / D or arrows | Left joystick |
+| Jump | W, Space, or Up | Jump button |
+| Punch | J | Punch button |
+| Kick | K | Kick button |
+| Block | L, S, or Down | Hold Block button |
+| Dash | Shift or I | Dash button |
+| Ultimate | U when the meter is full | Ult button |
+| Dive kick | While airborne, hold S and press K | While airborne, hold Block and tap Kick |
+| Pause / resume | P or Esc | Pause button |
+| Mute / unmute | M | Sound button |
 
-Tip: kicks hit harder and knock enemies up, but leave you open for longer. Blocking cuts damage by about 90%.
+The menu has a Reduced motion toggle. A storage warning appears if saved data cannot be read or written. Existing valid save keys remain in use.
 
 ## Run locally
 
@@ -50,8 +45,8 @@ npx serve .
 
 ```
 index.html   page and overlay UI
-style.css    layout and touch controls
-game.js      game logic, AI, rendering, audio
+style.css    responsive arena, overlays, and touch controls
+game.js      game logic, AI, rendering, audio, and saved progression
 ```
 
 ## License

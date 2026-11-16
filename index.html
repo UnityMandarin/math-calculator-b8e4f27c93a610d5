@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Stick Showdown</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="wrap">
   <canvas id="c" width="960" height="540"></canvas>
+  <div id="runTools"><button id="pauseBtn" aria-label="Pause">Pause</button><button id="muteBtn" aria-label="Mute sound">Sound on</button></div>
   <button id="exit" class="off">Exit training</button>
   <div id="menu" class="overlay">
     <h1 id="title">Stick Showdown</h1>
     <p id="sub">Survive endless waves of stickmen.<br>Punch, kick, block and keep your combo alive.</p>
+    <p id="status" class="status"></p>
     <div class="row"><button id="start">Play</button><button id="train" class="alt">Training</button><button id="shopBtn" class="alt">Shop</button><button id="mapBtn" class="alt">Map</button><button id="abBtn" class="alt">Abilities</button></div>
+    <button id="motionBtn" class="alt">Reduced motion: off</button>
     <p class="keys">A / D move &nbsp; W jump (hold W + D to leap forward) &nbsp; J punch &nbsp; K kick &nbsp; L block &nbsp; Shift dash &nbsp; U ultimate &nbsp; S + K in the air: dive kick &nbsp; P pause &nbsp; M mute</p>
   </div>
   <div id="shop" class="overlay hide"><h1 id="shopTitle">Shop</h1><p id="shopCoins"></p><div id="items"></div><button id="shopBack">Back</button></div>
+  <div id="reward" class="overlay hide"><h1>Wave reward</h1><p>Choose one run-only bonus. It lasts until this run ends.</p><div id="rewardChoices" class="rewardChoices"></div></div>
   <div id="touch">
     <div id="joy"><div id="knob"></div></div>
-    <div class="grp"><button data-k="p">Punch</button><button data-k="k">Kick</button><button data-k="d">Dash</button><button data-k="x">Ult</button><button id="foe" class="off">+Foe</button></div>
+    <div class="grp"><button data-k="u">Jump</button><button data-k="b">Block</button><button data-k="p">Punch</button><button data-k="k">Kick</button><button data-k="d">Dash</button><button data-k="x">Ult</button><button id="foe" class="off">+Foe</button></div>
   </div>
 </div>
 <script src="game.js"></script>
